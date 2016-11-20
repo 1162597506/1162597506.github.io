@@ -9,25 +9,19 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##servlet的生命周期
-####servlet的生命周期可以简单的分成下面5个步骤：
-
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelet">
+  <meta name="description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
+1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet的生命周期">
 <meta property="og:url" content="http://yoursite.com/2016/11/20/Servlet的生命周期/index.html">
 <meta property="og:site_name" content="Alan's blog">
-<meta property="og:description" content="##servlet的生命周期
-####servlet的生命周期可以简单的分成下面5个步骤：
-
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelet">
-<meta property="og:updated_time" content="2016-11-20T03:38:50.000Z">
+<meta property="og:description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
+1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
+<meta property="og:updated_time" content="2016-11-20T03:45:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet的生命周期">
-<meta name="twitter:description" content="##servlet的生命周期
-####servlet的生命周期可以简单的分成下面5个步骤：
-
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelet">
+<meta name="twitter:description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
+1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
   
     <link rel="alternative" href="/atom.xml" title="Alan&#39;s blog" type="application/atom+xml">
   
@@ -212,13 +206,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##servlet的生命周期</p>
-<p>####servlet的生命周期可以简单的分成下面5个步骤：</p>
-<blockquote>
+        <h2 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h2><h4 id="servlet的生命周期可以简单的分成下面5个步骤："><a href="#servlet的生命周期可以简单的分成下面5个步骤：" class="headerlink" title="servlet的生命周期可以简单的分成下面5个步骤："></a>servlet的生命周期可以简单的分成下面5个步骤：</h4><blockquote>
 <p>1：客户端请求该 Servlet；<br>2：装载 Servlet 类；<br>3：实例化并调用init()方法初始化该 Servlet；<br>4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOptions()）；<br>5：调用destroy()方法销毁servlet。</p>
 </blockquote>
-<p>####当客户端首次发送过来一个请求(表单，超链接等)的时候：</p>
-<ul>
+<a id="more"></a>
+<h4 id="当客户端首次发送过来一个请求-表单，超链接等-的时候："><a href="#当客户端首次发送过来一个请求-表单，超链接等-的时候：" class="headerlink" title="当客户端首次发送过来一个请求(表单，超链接等)的时候："></a>当客户端首次发送过来一个请求(表单，超链接等)的时候：</h4><ul>
 <li><p>例如点击了一个超链接：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"helloWorld"</span>&gt;</span>helloWorld<span class="tag">&lt;<span class="name">a</span>/&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -242,7 +234,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2016/11/19/servlet的生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/02/markdown使用/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">markdown使用</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>

@@ -198,83 +198,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##servlet的生命周期</p>
-<p>####servlet的生命周期可以简单的分成下面5个步骤：</p>
-<blockquote>
-<p>1：客户端请求该 Servlet；<br>2：装载 Servlet 类；<br>3：实例化并调用init()方法初始化该 Servlet；<br>4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOptions()）；<br>5：调用destroy()方法销毁servlet。</p>
-</blockquote>
-<p>####当客户端首次发送过来一个请求(表单，超链接等)的时候：</p>
-<ul>
-<li><p>例如点击了一个超链接：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"helloWorld"</span>&gt;</span>helloWorld<span class="tag">&lt;<span class="name">a</span>/&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>这个时候服务器会在Web容器中寻找与该请求对应的Servlet实例，假如是第一次请求该Servlet，那么就会创建一个该Servlet的实例，并调用改Servlet的 init() 方法;这个方法用<br>来初始化一些配置，比如连接数据库等。通常情况下不重写 init()，而且init()方法只会&gt;在创建改Servlet实例的时候调用一次。假如不是第一次请求改Servlet，那么就直接调用原<br>来已经创建的实例去处理请求。init()方法的调用是Servlet生命周期的开始。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public void init() throws ServletException &#123;</div><div class="line"> super.init();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Servlet实例会调用不同的方法去处理请求，超链接请求则调用service()方法去处理请求，表单请求则根据请求方法get、post、put、delete等分别调用doGet()&gt;、doPost()、doPut()、doDelete()等方法对请求做相应的处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</div><div class="line">        req.getRequestDispatcher(&quot;success.jsp&quot;).forward(req, resp);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>当对应的相应请求的方法执行之后，调用destroy()方法释放资源，如关闭数据库连接等&gt;。一般不会去重写init()和destory()方法。destroy()方法被掉用标志servlet生命周期的&gt;结束，它和init方法一样，再servlet生命周期中只被调用一次（容我说句废话=_=）。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    public void destroy() &#123;</div><div class="line">    super.destroy();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><em>本文由本人亲自码字而成，如有雷同，算你抄我</em></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-servlet的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/servlet的生命周期/" class="article-date">
-  	<time datetime="2016-11-19T14:18:48.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/servlet的生命周期/">
-        markdown使用
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##servlet的生命周期</p>
-<p>####servlet的生命周期可以简单的分成下面5个步骤：</p>
-<blockquote>
+        <h2 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h2><h4 id="servlet的生命周期可以简单的分成下面5个步骤："><a href="#servlet的生命周期可以简单的分成下面5个步骤：" class="headerlink" title="servlet的生命周期可以简单的分成下面5个步骤："></a>servlet的生命周期可以简单的分成下面5个步骤：</h4><blockquote>
 <p>1：客户端请求该 Servlet；<br>2：装载 Servlet 类；<br>3：实例化并调用init()方法初始化该 Servlet；<br>4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOptions()）；<br>5：调用destroy()方法销毁servlet。</p>
 </blockquote>
       
@@ -290,7 +214,7 @@
     </div>
       
         <p class="article-more-link">
-          <a  href="/2016/11/19/servlet的生命周期/#more">more >></a>
+          <a  href="/2016/11/20/Servlet的生命周期/#more">more >></a>
         </p>
       
     
