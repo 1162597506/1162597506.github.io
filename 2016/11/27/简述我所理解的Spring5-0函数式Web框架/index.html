@@ -9,34 +9,16 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简述我所理解的Spring5.0 函数式Web框架[TOC]
-一：背景
-基于Spring5.0第一个里程碑提供Reeactive支持基础上构建的框架，并且我们依旧提供基于注解的请求处理,
-
-二：处理流程下面是个人的理解
-
- 1：  框架自带的web容器（Reactor Netty, RxNetty,）接受来自服务器的请求 2：  由Web容器接受请求，将请求传给路由函数 3：  路由函数通过判断请">
+  <meta name="description" content="简述我所理解的Spring5.0 函数式Web框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简述我所理解的Spring5.0函数式Web框架">
 <meta property="og:url" content="http://yoursite.com/2016/11/27/简述我所理解的Spring5-0函数式Web框架/index.html">
 <meta property="og:site_name" content="Alan's blog">
-<meta property="og:description" content="简述我所理解的Spring5.0 函数式Web框架[TOC]
-一：背景
-基于Spring5.0第一个里程碑提供Reeactive支持基础上构建的框架，并且我们依旧提供基于注解的请求处理,
-
-二：处理流程下面是个人的理解
-
- 1：  框架自带的web容器（Reactor Netty, RxNetty,）接受来自服务器的请求 2：  由Web容器接受请求，将请求传给路由函数 3：  路由函数通过判断请">
-<meta property="og:updated_time" content="2016-11-27T13:45:41.000Z">
+<meta property="og:description" content="简述我所理解的Spring5.0 函数式Web框架">
+<meta property="og:updated_time" content="2016-11-27T13:50:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简述我所理解的Spring5.0函数式Web框架">
-<meta name="twitter:description" content="简述我所理解的Spring5.0 函数式Web框架[TOC]
-一：背景
-基于Spring5.0第一个里程碑提供Reeactive支持基础上构建的框架，并且我们依旧提供基于注解的请求处理,
-
-二：处理流程下面是个人的理解
-
- 1：  框架自带的web容器（Reactor Netty, RxNetty,）接受来自服务器的请求 2：  由Web容器接受请求，将请求传给路由函数 3：  路由函数通过判断请">
+<meta name="twitter:description" content="简述我所理解的Spring5.0 函数式Web框架">
   
     <link rel="alternative" href="/atom.xml" title="Alan&#39;s blog" type="application/atom+xml">
   
@@ -221,7 +203,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="简述我所理解的Spring5-0-函数式Web框架"><a href="#简述我所理解的Spring5-0-函数式Web框架" class="headerlink" title="简述我所理解的Spring5.0 函数式Web框架"></a>简述我所理解的Spring5.0 函数式Web框架</h2><p>[TOC]</p>
+        <h2 id="简述我所理解的Spring5-0-函数式Web框架"><a href="#简述我所理解的Spring5-0-函数式Web框架" class="headerlink" title="简述我所理解的Spring5.0 函数式Web框架"></a>简述我所理解的Spring5.0 函数式Web框架</h2><!-- toc -->
+<a id="more"></a>
 <h3 id="一：背景"><a href="#一：背景" class="headerlink" title="一：背景"></a>一：背景</h3><blockquote>
 <p>基于<a href="http://www.linuxidc.com/Linux/2016-08/134265.htm" target="_blank" rel="external">Spring5.0第一个里程碑提供Reeactive支持</a>基础上构建的框架，并且我们依旧提供基于注解的请求处理,</p>
 </blockquote>
@@ -264,8 +247,12 @@
 <h3 id="五：服务器"><a href="#五：服务器" class="headerlink" title="五：服务器"></a>五：服务器</h3><blockquote>
 <p>函数式编程风格，哪里都是函数！ 在我看来，通过导入相关的配置包来内嵌一个Web容器；将对Web容器的一些配置和启动服务器的操作写成一个函数，然后通过调用这个服务器函数来启动服务器。</p>
 </blockquote>
-<h3 id="六：总结"><a href="#六：总结" class="headerlink" title="六：总结"></a>六：总结</h3><h2 id="gt-在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。"><a href="#gt-在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。" class="headerlink" title="&gt;  在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。"></a>&gt;  在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。</h2><h2 id="gt-大家若是有兴趣去研究，可以去查看英语原文或者我参考的别人对英语原文的译文"><a href="#gt-大家若是有兴趣去研究，可以去查看英语原文或者我参考的别人对英语原文的译文" class="headerlink" title="&gt;  大家若是有兴趣去研究，可以去查看英语原文或者我参考的别人对英语原文的译文."></a>&gt;  大家若是有兴趣去研究，可以去查看<a href="https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework" target="_blank" rel="external">英语原文</a>或者我参考的别人对<a href="http://www.oschina.net/translate/new-in-spring-5-functional-web-framework" target="_blank" rel="external">英语原文的译文</a>.</h2><blockquote>
-<p>从接触Spring5.0新特性到写这篇博客中间经历了四天时间，最后一天简单写了个PPT作为例会讲解使用。由于例会讲解过程中加入了对代码的讲解，本意是通过对代码的讲解加深对新框架的理解，不料弄巧成浊，讲解的效果特别差。写此博客以阐述对新框架的理解。</p>
+<h3 id="六：总结"><a href="#六：总结" class="headerlink" title="六：总结"></a>六：总结</h3><h2 id="gt-在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。"><a href="#gt-在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。" class="headerlink" title="&gt;  在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。"></a>&gt;  在别人给的实例代码中，代码量不多，但是用到的各种知识比较广，如http协议、java8的新特性、设计模式、编程范式和内嵌web容器等！对于学习这种新技术，我觉得对其成因和特点等方面有一定的了解即可，应该将更多的时间和精力放在成熟的springMVC框架上，等以后这个新框架的技术成熟（能用来实际的开发项目）了，像我这个初级菜鸟程序员再去仔细学习和研究会更好。</h2><blockquote>
+<p> 大家若是有兴趣去研究，可以去查看<a href="https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework" target="_blank" rel="external">英语原文</a>或者我参考的别人对<a href="http://www.oschina.net/translate/new-in-spring-5-functional-web-framework" target="_blank" rel="external">英语原文的译文</a>.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p> 从接触Spring5.0新特性到写这篇博客中间经历了四天时间，最后一天简单写了个PPT作为例会讲解使用。由于例会讲解过程中加入了对代码的讲解，本意是通过对代码的讲解加深对新框架的理解，不料弄巧成浊，讲解的效果特别差。写此博客以阐述对新框架的理解。</p>
 </blockquote>
 
       
