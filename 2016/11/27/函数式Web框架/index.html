@@ -3,25 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Servlet的生命周期 | Alan&#39;s blog</title>
+  <title>函数式Web框架 | Alan&#39;s blog</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
+  <meta name="description" content="胖子不是一口吃出来的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Servlet的生命周期">
-<meta property="og:url" content="http://yoursite.com/2016/11/20/Servlet的生命周期/index.html">
+<meta property="og:title" content="函数式Web框架">
+<meta property="og:url" content="http://yoursite.com/2016/11/27/函数式Web框架/index.html">
 <meta property="og:site_name" content="Alan's blog">
-<meta property="og:description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
-<meta property="og:updated_time" content="2016-11-20T03:45:29.000Z">
+<meta property="og:description" content="胖子不是一口吃出来的">
+<meta property="og:updated_time" content="2016-11-27T13:29:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Servlet的生命周期">
-<meta name="twitter:description" content="servlet的生命周期servlet的生命周期可以简单的分成下面5个步骤：
-1：客户端请求该 Servlet；2：装载 Servlet 类；3：实例化并调用init()方法初始化该 Servlet；4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOp">
+<meta name="twitter:title" content="函数式Web框架">
+<meta name="twitter:description" content="胖子不是一口吃出来的">
   
     <link rel="alternative" href="/atom.xml" title="Alan&#39;s blog" type="application/atom+xml">
   
@@ -171,11 +168,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Servlet的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="简述我所理解的spring5.0-函数式Web框架" class="article article-type-简述我所理解的spring5.0" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/20/Servlet的生命周期/" class="article-date">
-  	<time datetime="2016-11-20T03:34:49.000Z" itemprop="datePublished">2016-11-20</time>
+      <a href="/2016/11/27/函数式Web框架/" class="article-date">
+  	<time datetime="2016-11-27T13:29:30.000Z" itemprop="datePublished">2016-11-27</time>
 </a>
     </div>
   
@@ -188,7 +185,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Servlet的生命周期
+      函数式Web框架
       
     </h1>
   
@@ -206,25 +203,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h2><h4 id="servlet的生命周期可以简单的分成下面5个步骤："><a href="#servlet的生命周期可以简单的分成下面5个步骤：" class="headerlink" title="servlet的生命周期可以简单的分成下面5个步骤："></a>servlet的生命周期可以简单的分成下面5个步骤：</h4><blockquote>
-<p>1：客户端请求该 Servlet；<br>2：装载 Servlet 类；<br>3：实例化并调用init()方法初始化该 Servlet；<br>4：根据请求，调用相应的service()方法（根据请求方法不同调用doGet() 或者 doPost()，此外还有doHead()、doPut()、doTrace()、doDelete()、doOptions()）；<br>5：调用destroy()方法销毁servlet。</p>
-</blockquote>
-<a id="more"></a>
-<h4 id="当客户端首次发送过来一个请求-表单，超链接等-的时候："><a href="#当客户端首次发送过来一个请求-表单，超链接等-的时候：" class="headerlink" title="当客户端首次发送过来一个请求(表单，超链接等)的时候："></a>当客户端首次发送过来一个请求(表单，超链接等)的时候：</h4><ul>
-<li><p>例如点击了一个超链接：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"helloWorld"</span>&gt;</span>helloWorld<span class="tag">&lt;<span class="name">a</span>/&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>这个时候服务器会在Web容器中寻找与该请求对应的Servlet实例，假如是第一次请求该Servlet，那么就会创建一个该Servlet的实例，并调用改Servlet的 init() 方法;这个方法用<br>来初始化一些配置，比如连接数据库等。通常情况下不重写 init()，而且init()方法只会&gt;在创建改Servlet实例的时候调用一次。假如不是第一次请求改Servlet，那么就直接调用原<br>来已经创建的实例去处理请求。init()方法的调用是Servlet生命周期的开始。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public void init() throws ServletException &#123;</div><div class="line"> super.init();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Servlet实例会调用不同的方法去处理请求，超链接请求则调用service()方法去处理请求，表单请求则根据请求方法get、post、put、delete等分别调用doGet()&gt;、doPost()、doPut()、doDelete()等方法对请求做相应的处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</div><div class="line">        req.getRequestDispatcher(&quot;success.jsp&quot;).forward(req, resp);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>当对应的相应请求的方法执行之后，调用destroy()方法释放资源，如关闭数据库连接等&gt;。一般不会去重写init()和destory()方法。destroy()方法被掉用标志servlet生命周期的&gt;结束，它和init方法一样，再servlet生命周期中只被调用一次（容我说句废话=_=）。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    public void destroy() &#123;</div><div class="line">    super.destroy();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><em>本文由本人亲自码字而成，如有雷同，算你抄我</em></p>
-
+        
       
     </div>
     
@@ -233,15 +212,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/11/27/函数式Web框架/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/27/简述我所理解的Spring5.0 函数式Web框架/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          函数式Web框架
+          (no title)
         
       </div>
     </a>
   
+  
+    <a href="/2016/11/20/Servlet的生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Servlet的生命周期</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 
@@ -268,7 +252,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Servlet的生命周期" data-title="Servlet的生命周期" data-url="http://yoursite.com/2016/11/20/Servlet的生命周期/"></div>
+	<div class="ds-thread" data-thread-key="函数式Web框架" data-title="函数式Web框架" data-url="http://yoursite.com/2016/11/27/函数式Web框架/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
